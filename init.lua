@@ -1,7 +1,16 @@
 on_wield = fmod.create()
 
 on_wield.registered_on_wields = {}
+
+function on_wield.register_on_wield(callback)
+	table.insert(on_wield.registered_on_wields, callback)
+end
+
 on_wield.registered_on_unwields = {}
+
+function on_wield.register_on_unwield(callback)
+	table.insert(on_wield.registered_on_unwields, callback)
+end
 
 local last_wields_by_player_name = {}
 

@@ -1,3 +1,5 @@
 # on_wield
 
-TODO: write a description
+an API to handle wielding/unwielding tools
+
+see [API.md] for details.
