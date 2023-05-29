@@ -44,7 +44,7 @@ minetest.register_on_joinplayer(function(player)
 	local player_name = player:get_player_name()
 	local list = player:get_wield_list()
 	local index = player:get_wield_index()
-	local item = player:get_wield_item()
+	local item = player:get_wielded_item()
 
 	last_wields_by_player_name[player_name] = { item, list, index }
 
@@ -67,7 +67,7 @@ minetest.register_globalstep(function()
 		local player_name = player:get_player_name()
 		local list = player:get_wield_list()
 		local index = player:get_wield_index()
-		local item = player:get_wield_item()
+		local item = player:get_wielded_item()
 		local last_item, last_list, last_index = unpack(last_wields_by_player_name[player_name])
 
 		if not (list == last_list and index == last_index and item == last_item) then
